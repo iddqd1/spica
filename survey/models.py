@@ -24,6 +24,10 @@ class Survey(models.Model):
         help_text="Date and time when the survey was last updated.",
     )
     strategy = models.CharField(max_length=50, blank=True, default="")
+    active = models.BooleanField(
+        default=True,
+        help_text="Indicates whether the survey is active or not.",
+    )
 
     def __str__(self):
         return str(self.title)
