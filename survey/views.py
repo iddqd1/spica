@@ -11,6 +11,7 @@ from survey import serializers
 class SurveyViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     """Survey viewset."""
 
+    permission_classes = [permissions.AllowAny]
     serializer_class = serializers.SurveySerializer
     queryset = models.Survey.objects.filter(active=True)
 

@@ -1,0 +1,43 @@
+Create app for doing surveys for users.
+
+
+
+
+User should be able to register by calling endpoint /api/users-create/ and posting data.
+{
+  "name": "string",
+  "email": "user@example.com",
+  "password": "string",
+  "password_confirm": "string"
+}
+
+after register should be redirected to login page. Which take
+{
+    "username": "email"
+    "password" "string"
+}
+
+endpoint returns token
+
+{
+  "token": "string"
+}
+
+
+Main page should show list of available surveys. Do not useEffect
+Data is returned from rest endpoint /api/surveys/ returning json list.
+[
+  {
+    "id": 0,
+    "title": "string",
+    "description": "string",
+    "configuration": "string",
+    "created": "2025-05-17T11:49:10.566Z",
+    "modified": "2025-05-17T11:49:10.566Z"
+  }
+]
+Do not use useEffect but useQuery.
+List should show title and description.
+After clicking in one of the survey from the list logged in user should be able to fill the survey.
+Not logged in user should be redirected to login page.
+Login page should contain link to register page.
