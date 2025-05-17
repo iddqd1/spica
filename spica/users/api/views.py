@@ -1,5 +1,7 @@
+from rest_framework import permissions
 from rest_framework import status
 from rest_framework.decorators import action
+from rest_framework.mixins import CreateModelMixin
 from rest_framework.mixins import ListModelMixin
 from rest_framework.mixins import RetrieveModelMixin
 from rest_framework.mixins import UpdateModelMixin
@@ -8,6 +10,7 @@ from rest_framework.viewsets import GenericViewSet
 
 from spica.users.models import User
 
+from .serializers import CreateUserSerializer
 from .serializers import UserSerializer
 
 
@@ -24,3 +27,9 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def me(self, request):
         serializer = UserSerializer(request.user, context={"request": request})
         return Response(status=status.HTTP_200_OK, data=serializer.data)
+
+
+class CreateUserViewSet(CreateModelMixin, GenericViewSet):
+    serializer_class = CreateUserSerializer
+    permission_classes = [permissions.AllowAny]
+    queryset = User.objects.all()
