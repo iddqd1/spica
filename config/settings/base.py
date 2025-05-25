@@ -94,6 +94,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "spica.users",
     "survey",
+    "payment",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -364,3 +365,6 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+STRIPE_PUBLIC_KEY = env.str("STRIPE_PUBLIC_KEY", default="")
+STRIPE_SECRET_KEY = env.str("STRIPE_SECRET_KEY", default="")
