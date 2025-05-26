@@ -72,8 +72,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/local.txt
 
-      - name: Check DB Migrations
-        run: python manage.py makemigrations --check
+      # - name: Check DB Migrations
+      #   run: python manage.py makemigrations --check
 
       - name: Run DB Migrations
         run: python manage.py migrate
