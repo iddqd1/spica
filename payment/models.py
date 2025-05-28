@@ -70,6 +70,6 @@ class StripePayment(models.Model):
                 ).model_dump(),
             ],
             mode="payment",
-            success_url="http://localhost:8000/success?session_id={CHECKOUT_SESSION_ID}",
-            cancel_url="http://localhost:8000/cancelled",
+            success_url=f"http://localhost:8000/survey/{survey.id}/success?session_id={{CHECKOUT_SESSION_ID}}",
+            cancel_url=f"http://localhost:8000/survey/{survey.id}/cancelled?session_id={{CHECKOUT_SESSION_ID}}",
         )
