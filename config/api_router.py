@@ -18,4 +18,5 @@ urlpatterns = router.urls
 
 urlpatterns += [
     path("", include("survey.urls", namespace="survey")),
+    path("", include("payment.urls", namespace="payment")),
 ]

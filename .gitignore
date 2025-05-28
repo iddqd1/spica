@@ -273,3 +273,4 @@ spica/media/
 
 .pytest_cache/
 .vscode
+.env

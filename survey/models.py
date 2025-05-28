@@ -28,6 +28,12 @@ class Survey(models.Model):
         default=True,
         help_text="Indicates whether the survey is active or not.",
     )
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=20.0,
+        help_text="Price of the survey.",
+    )
 
     def __str__(self):
         return str(self.title)
