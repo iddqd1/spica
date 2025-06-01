@@ -7,6 +7,38 @@ Spica is a mistery
 
 License: MIT
 
+## Create basic development environment
+To create a basic development environment, you can use the following command:
+
+```bash
+brew update
+brew install postgresql@14
+psql postgres
+```
+```sql
+CREATE DATABASE spica;
+```
+
+
+## Nice to have
+
+For pyenv installation, follow the instructions at:
+
+
+```bash
+brew install pyenv
+# read instructions
+# https://github.com/pyenv/pyenv?tab=readme-ov-file#homebrew-in-macos
+
+pyenv install 3.12
+```
+
+Auto switch to the correct .viertualenv when you `cd` into a directory with a `.venv` directory:
+
+- https://ohmyz.sh
+- https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+
+
 ## Settings
 
 Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
